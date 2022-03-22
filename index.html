@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoproInge</title>
     <link rel="icon" href="./coproingeIcon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         html, body {
             height: 100%;
@@ -14,11 +18,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            font-family: 'Noto Sans', sans-serif;
         }
         #logo {
             width: 300px;
             animation: appear 5s infinite;
-            position: absolute;
         }
         @keyframes appear {
             0% {
@@ -40,9 +45,54 @@
                 stroke-dashoffset: 100;
             }
         }
+        #erp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: #676E69 solid 2px;
+            padding: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #676E69;
+            transform-origin: center;
+            box-shadow: 2px 2px 3px #CE6426;
+        }
+        #erp > div > text {
+            color: #CE6426;
+        }
+        
+        #erp:hover {
+            transform: scale(1.1);
+        }
+
+        #erp:active {
+            transform: scale(0.9);
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .noselect {
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Safari */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Old versions of Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Non-prefixed version, currently
+                                            supported by Chrome, Edge, Opera and Firefox */
+        }
     </style>
 </head>
-<body>
+<body class="noselect">
     <svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 295.624 330" style="enable-background:new 0 0 295.624 330;" xml:space="preserve">
         <style type="text/css">
@@ -198,5 +248,11 @@
             </g>
         </g>
     </svg>
+    <div id="erp"><div>I N G R E S A R&nbsp;&nbsp;&nbsp;&nbsp;<text>E R P</text></div></div>
+    <script>
+        $("#erp").click(()=>{
+            window.location.href = "https://erp.coproinge.com";
+        });
+    </script>
 </body>
 </html>
